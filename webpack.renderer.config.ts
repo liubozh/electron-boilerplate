@@ -6,7 +6,11 @@ import path from 'path';
 
 rules.push({
   test: /\.css$/,
-  use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'postcss-loader' }],
+  use: [
+    { loader: 'style-loader' },
+    { loader: 'css-loader' },
+    { loader: 'postcss-loader' },
+  ],
 });
 
 export const rendererConfig: Configuration = {
@@ -17,7 +21,6 @@ export const rendererConfig: Configuration = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@/lib': path.resolve(__dirname, './src/lib'),
     },
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
   },
